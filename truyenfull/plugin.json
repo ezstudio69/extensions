@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "id" : "000001",
+    "name": "Truyện Full",
+    "author": "web",
+    "version": 1,
+    "source": "truyenfull",
+    "base_url": "truyenfull.vision",
+    "regexp": "(www.)?truyenfull.(vn|net|io|bio|vision)",
+    "description": "Đọc truyện trên trang Truyện Full",
+    "locale": "vi_VN",
+    "type": "novel",
+    "language": "javascript"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "search": {
+      "url": "https://truyenfull.vision/tim-kiem/?tukhoa=",
+      "search": "",
+      "page": "&page=",
+      "script": "search.js"
+    },
+    "detail": {
+      "url": "",
+      "script": "detail.js"
+    },
+    "page": {
+      "url": "",
+      "script": "page.js"
+    },
+    "toc": {
+      "url": "",
+      "script": "toc.js"
+    },
+    "chap": {
+      "url": "",
+      "script": "chap.js"
+    }
+  }
+}

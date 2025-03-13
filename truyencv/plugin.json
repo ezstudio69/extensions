@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "id" : "000002",
+    "name": "Truyện CV",
+    "author": "web",
+    "version": 1,
+    "source": "truyencv",
+    "base_url": "api.mottruyen.com",
+    "regexp": "(www.)?api.mottruyen.(vn|net|io|bio|vision)",
+    "description": "Đọc truyện trên trang Truyện CV",
+    "locale": "vi_VN",
+    "type": "novel",
+    "language": "javascript"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "search": {
+      "url": "https://api.mottruyen.com/tim-kiem?app_version=2.9.5&deviceid=9BC054AD-01DA-4303-AB1B-E8183F48B832&os=iOS&page_number=1&page_size=1&k=",
+      "search": "",
+      "page": "&page=",
+      "script": "search.js"
+    },
+    "detail": {
+      "url": "https://api.mottruyen.com/story?app_version=2.9.5&deviceid=9BC054AD-01DA-4303-AB1B-E8183F48B832&os=iOS&page_number=1&page_size=1&story_id=",
+      "script": "detail.js"
+    },
+    "page": {
+      "url": "",
+      "script": "page.js"
+    },
+    "toc": {
+      "url": "https://api.mottruyen.com/listchap?app_version=2.9.5&deviceid=9BC054AD-01DA-4303-AB1B-E8183F48B832&os=iOS&story_id=",
+      "script": "toc.js"
+    },
+    "chap": {
+      "url": "https://api.mottruyen.com/chapter?app_version=2.9.5&deviceid=9BC054AD-01DA-4303-AB1B-E8183F48B832&os=iOS&sig=aade6af49b32d8622eb7192a2372f138&time=1741854851&userid=0&chapter_id=",
+      "script": "chap.js"
+    }
+  }
+}

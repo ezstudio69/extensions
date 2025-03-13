@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Truyện Full",
+        "id": "000001",
+        "source": "truyenfull",
+        "url": "https://truyenfull.vision",
+        "version": 1,
+        "cover": "https://raw.githubusercontent.com/ezstudio69/extensions/refs/heads/main/truyenfull/icon.png",
+        "download": "https://raw.githubusercontent.com/ezstudio69/extensions/refs/heads/main/truyenfull/truyenfull.zip"
+    },
+    {
+        "name": "Truyện CV",
+        "id": "000002",
+        "source": "truyencv",
+        "url": "https://metruyencv.com/",
+        "version": 1,
+        "cover": "https://raw.githubusercontent.com/ezstudio69/extensions/refs/heads/main/truyencv/icon.png",
+        "download": "https://raw.githubusercontent.com/ezstudio69/extensions/refs/heads/main/truyencv/truyencv.zip"
+    },
+]
