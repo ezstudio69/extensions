@@ -30,7 +30,7 @@ function execute() {
             ongoing: (document.querySelector("div.info")?.innerHTML || "").includes(">Đang ra<"),
             genres: genres,
             suggests: suggests,
-            host: "https://truyenfull.vision",
+            host: "https://truyenfull.vision"
         }));
     } catch (error) {
         Response.error(JSON.stringify({ success: false, error: error.message }));

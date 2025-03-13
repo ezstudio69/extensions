@@ -17,6 +17,6 @@ let data = [
     {title: "Đồng Nhân", input: "http://api.mottruyen.com/filter?app_version=2.9.5&date=0&deviceid=9BC054AD-01DA-4303-AB1B-E8183F48B832&kind=0&os=iOS&sort=0&totalchapter=0&cat=28&status=0", page: "&page=", script: "gen.js"},
     {title: "Linh Dị", input: "http://api.mottruyen.com/filter?app_version=2.9.5&date=0&deviceid=9BC054AD-01DA-4303-AB1B-E8183F48B832&kind=0&os=iOS&sort=0&totalchapter=0&cat=31&status=0", page: "&page=", script: "gen.js"},
     {title: "Mạt Thế", input: "http://api.mottruyen.com/filter?app_version=2.9.5&date=0&deviceid=9BC054AD-01DA-4303-AB1B-E8183F48B832&kind=0&os=iOS&sort=0&totalchapter=0&cat=32&status=0", page: "&page=", script: "gen.js"},
-    {title: "Nữ Hiệp", input: "http://api.mottruyen.com/filter?app_version=2.9.5&date=0&deviceid=9BC054AD-01DA-4303-AB1B-E8183F48B832&kind=0&os=iOS&sort=0&totalchapter=0&cat=26&status=0", page: "&page=", script: "gen.js"},
+    {title: "Nữ Hiệp", input: "http://api.mottruyen.com/filter?app_version=2.9.5&date=0&deviceid=9BC054AD-01DA-4303-AB1B-E8183F48B832&kind=0&os=iOS&sort=0&totalchapter=0&cat=26&status=0", page: "&page=", script: "gen.js"}
 ];
 Response.success(JSON.stringify(data))

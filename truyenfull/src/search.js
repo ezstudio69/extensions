@@ -12,7 +12,7 @@ function execute() {
                 link: e.querySelector(".truyen-title > a")?.href,
                 description: e.querySelector(".author")?.textContent.trim(),
                 cover: e.querySelector("[data-image]")?.getAttribute("data-image"),
-                host: "https://truyenfull.vision",
+                host: "https://truyenfull.vision"
             });
         });
 

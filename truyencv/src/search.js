@@ -15,7 +15,7 @@ function execute() {
                 link: json.data[i].ID,
                 description: json.data[i].AUTHOR,
                 cover: json.data[i].THUMB,
-                host: "http://api.mottruyen.com",
+                host: "http://api.mottruyen.com"
             })
         }
 

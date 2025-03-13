@@ -9,7 +9,7 @@ function execute() {
             list.push({
                 name: json.data[i].NAME,
                 url: json.data[i].ID,
-                host: "http://api.mottruyen.com",
+                host: "http://api.mottruyen.com"
             })
         }
 

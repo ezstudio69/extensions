@@ -14,7 +14,7 @@ function execute() {
             ongoing: true,
             genres: [],
             suggests: [],
-            host: "",
+            host: "http://api.mottruyen.com"
         }));
     } catch (error) {
         Response.error(JSON.stringify({ success: false, error: error.message }));
