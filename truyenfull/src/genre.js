@@ -18,7 +18,6 @@ let data = [
     {title: "Trinh Thám", input: "https://truyenfull.vision/the-loai/trinh-tham/", page: "trang-", script: "gen.js"},
     {title: "Thám Hiểm", input: "https://truyenfull.vision/the-loai/tham-hiem/", page: "trang-", script: "gen.js"},
     {title: "Linh Dị", input: "https://truyenfull.vision/the-loai/linh-di/", page: "trang-", script: "gen.js"},
-    {title: "Sắc", input: "https://truyenfull.vision/the-loai/sac/", page: "trang-", script: "gen.js"},
     {title: "Ngược", input: "https://truyenfull.vision/the-loai/nguoc/", page: "trang-", script: "gen.js"},
     {title: "Sủng", input: "https://truyenfull.vision/the-loai/sung/", page: "trang-", script: "gen.js"},
     {title: "Cung Đấu", input: "https://truyenfull.vision/the-loai/cung-dau/", page: "trang-", script: "gen.js"},
