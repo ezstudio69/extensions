@@ -342,7 +342,6 @@ function execute() {
         "Dạo bước phồn hoa",
         "Nếu thanh xuân không giữ lại được",
         "Liên hoa yêu cốt",
-        /*end*/
         "Một ai của ngày đó",
         "Dù yêu anh có lệch múi giờ",
         "Vụ án không có kẻ sát nhân",
