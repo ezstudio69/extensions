@@ -786,6 +786,17 @@ function execute() {
     ];
 
     try {
+        // Chuẩn hoá chung: hạ chữ, bỏ dấu tiếng Việt, xoá khoảng trắng & ký tự đặc biệt
+        const norm = (s) =>
+            (s ?? "")
+            .toLowerCase()
+            .normalize("NFD")                 // tách dấu
+            .replace(/\p{M}/gu, "")           // xoá dấu (unicode marks)
+            .replace(/[\s\-\.,!?:'\"()\[\]{}<>`~@#$%^&*_\+=\/\\|]/g, ""); // xoá ký tự
+
+            // Dùng Set để tra nhanh O(1)
+        const blackSet = new Set(blackList.map(norm));
+
         let novelList = [];
         let nextElement = document.querySelector(".pagination > li.active + li");
         let next = nextElement ? nextElement.textContent.trim() : null;
@@ -794,13 +805,10 @@ function execute() {
 
         document.querySelectorAll(".list-truyen div[itemscope]").forEach(e => {
             const name = e.querySelector(".truyen-title > a")?.textContent.trim();
-            const nameCmp = name?.toLowerCase().replace(/[\s\-\.,!?:'\"()\[\]{}<>`~@#$%^&*_\+=\/\\|]/g, '');
+            const nameCmp = norm(name);
 
             // kiểm tra blacklist
-            if (
-                nameCmp &&
-                !blackList.some(b => b.toLowerCase() === nameCmp)
-            ) {
+            if (nameCmp && !blackSet.has(nameCmp)) {
                 novelList.push({
                     name: name,
                     link: e.querySelector(".truyen-title > a")?.href,
