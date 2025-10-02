@@ -1,5 +1,6 @@
 function execute() {
     const blackList = [
+        "Thủ tướng mời xem đơn ly hôn",
         "Chọc Tức Vợ Yêu Mua Một Tặng Một",
         "Gió Ấm Không Bằng Anh Thâm Tình",
         "Tiểu yêu tinh của Bạc gia",
