@@ -786,6 +786,17 @@ function execute() {
     ];
     
     try {
+        // Chuẩn hoá chung: hạ chữ, bỏ dấu tiếng Việt, xoá khoảng trắng & ký tự đặc biệt
+        const norm = (s) =>
+            (s ?? "")
+            .toLowerCase()
+            .normalize("NFD")                 // tách dấu
+            .replace(/\p{M}/gu, "")           // xoá dấu (unicode marks)
+            .replace(/[\s\-\.,!?:'\"()\[\]{}<>`~@#$%^&*_\+=\/\\|]/g, ""); // xoá ký tự
+
+            // Dùng Set để tra nhanh O(1)
+        const blackSet = new Set(blackList.map(norm));
+
         let jsonText = document.documentElement.innerText.replace(/[\u0000-\u001F\u007F-\u009F]/g, "");
         let json = JSON.parse(jsonText);
 
@@ -797,10 +808,10 @@ function execute() {
         let novelList = [];
         for (let i = 0; i < json.data.length; i++) {
             const name = json.data[i].NAME;
-            if (
-                name &&
-                !blackList.some(b => b.toLowerCase() === name.toLowerCase())
-            ) {
+            const nameCmp = norm(name);
+
+            // kiểm tra blacklist
+            if (nameCmp && !blackSet.has(nameCmp)) {
                 novelList.push({
                     name: name,
                     link: json.data[i].ID,
