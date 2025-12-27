@@ -1,5 +1,6 @@
 function execute() {
     const blackList = [
+        "Quang Âm Chi Ngoại",
         "Hùng Biện Cuốn Hút Quá Đơn Giản",
         "Trở Thành Bậc Thầy Sân Khấu",
         "Vươn Đến Sự Hoàn Thiện",
