@@ -1,4 +1,4 @@
-function execute() {
+(function() {
     const blackList = [
         "Quang Âm Chi Ngoại",
         "Hùng Biện Cuốn Hút Quá Đơn Giản",
@@ -918,43 +918,44 @@ function execute() {
         "Boss hung mãnh 2 Cả đời chỉ vì em"
     ];
 
+    // Chuẩn hoá chung: hạ chữ, bỏ dấu tiếng Việt, xoá khoảng trắng & ký tự đặc biệt
+    const norm = (s) =>
+        (s ?? "")
+        .toLowerCase()
+        .normalize("NFD")                 // tách dấu
+        .replace(/\p{M}/gu, "")           // xoá dấu (unicode marks)
+        .replace(/[\s\-\.,!?:'\"()\[\]{}<>`~@#$%^&*_\+=\/\\|]/g, ""); // xoá ký tự
+
+    // Dùng Set để tra nhanh O(1)
+    const blackSet = new Set(blackList.map(norm));
+
+    let novelList = [];
+    let nextElement = document.querySelector(".pagination > li.active + li");
+    let next = nextElement ? nextElement.textContent.trim() : null;
+    if (!next) { next = 0;}
+    else { next = Number(next); }
+
+    document.querySelectorAll(".list-truyen div[itemscope]").forEach(e => {
+        const name = e.querySelector(".truyen-title > a")?.textContent.trim();
+        const nameCmp = norm(name);
+
+        // kiểm tra blacklist
+        if (nameCmp && !blackSet.has(nameCmp)) {
+            novelList.push({
+                name: name,
+                link: e.querySelector(".truyen-title > a")?.href,
+                description: e.querySelector(".author")?.textContent.trim(),
+                cover: e.querySelector("[data-image]")?.getAttribute("data-image"),
+                host: "https://truyenfull.vision"
+            });
+        }
+    });
+
+    // Android: uses Response.success/error (injected by WebView)
+    // iOS: uses return
     try {
-        // Chuẩn hoá chung: hạ chữ, bỏ dấu tiếng Việt, xoá khoảng trắng & ký tự đặc biệt
-        const norm = (s) =>
-            (s ?? "")
-            .toLowerCase()
-            .normalize("NFD")                 // tách dấu
-            .replace(/\p{M}/gu, "")           // xoá dấu (unicode marks)
-            .replace(/[\s\-\.,!?:'\"()\[\]{}<>`~@#$%^&*_\+=\/\\|]/g, ""); // xoá ký tự
-
-            // Dùng Set để tra nhanh O(1)
-        const blackSet = new Set(blackList.map(norm));
-
-        let novelList = [];
-        let nextElement = document.querySelector(".pagination > li.active + li");
-        let next = nextElement ? nextElement.textContent.trim() : null;
-        if (!next) { next = 0;}
-        else { next = Number(next); }
-
-        document.querySelectorAll(".list-truyen div[itemscope]").forEach(e => {
-            const name = e.querySelector(".truyen-title > a")?.textContent.trim();
-            const nameCmp = norm(name);
-
-            // kiểm tra blacklist
-            if (nameCmp && !blackSet.has(nameCmp)) {
-                novelList.push({
-                    name: name,
-                    link: e.querySelector(".truyen-title > a")?.href,
-                    description: e.querySelector(".author")?.textContent.trim(),
-                    cover: e.querySelector("[data-image]")?.getAttribute("data-image"),
-                    host: "https://truyenfull.vision"
-                });
-            }
-        });
-
-        Response.success(JSON.stringify({ success: true, data: novelList, next: next }));
-    } catch (error) {
-        Response.error(JSON.stringify({ success: false, error: error.message }));
+        Response.success(JSON.stringify({data: novelList, next: next}));
+    } catch(e) {
+        return JSON.stringify({success: true, data: novelList, next: next});
     }
-}
-execute();
+})()

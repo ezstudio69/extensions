@@ -1,42 +1,50 @@
-let data = [
-    {title: "Tiên Hiệp", input: "https://truyenfull.vision/the-loai/tien-hiep/", page: "trang-", script: "gen.js"},
-    {title: "Kiếm Hiệp", input: "https://truyenfull.vision/the-loai/kiem-hiep/", page: "trang-", script: "gen.js"},
-    {title: "Ngôn Tình", input: "https://truyenfull.vision/the-loai/ngon-tinh/", page: "trang-", script: "gen.js"},
-    {title: "Đô Thị", input: "https://truyenfull.vision/the-loai/do-thi/", page: "trang-", script: "gen.js"},
-    {title: "Quan Trường", input: "https://truyenfull.vision/the-loai/quan-truong/", page: "trang-", script: "gen.js"},
-    {title: "Võng Du", input: "https://truyenfull.vision/the-loai/vong-du/", page: "trang-", script: "gen.js"},
-    {title: "Khoa Huyễn", input: "https://truyenfull.vision/the-loai/khoa-huyen/", page: "trang-", script: "gen.js"},
-    {title: "Hệ Thống", input: "https://truyenfull.vision/the-loai/he-thong/", page: "trang-", script: "gen.js"},
-    {title: "Huyền Huyễn", input: "https://truyenfull.vision/the-loai/huyen-huyen/", page: "trang-", script: "gen.js"},
-    {title: "Dị Giới", input: "https://truyenfull.vision/the-loai/di-gioi/", page: "trang-", script: "gen.js"},
-    {title: "Dị Năng", input: "https://truyenfull.vision/the-loai/di-nang/", page: "trang-", script: "gen.js"},
-    {title: "Quân Sự", input: "https://truyenfull.vision/the-loai/quan-su/", page: "trang-", script: "gen.js"},
-    {title: "Lịch Sử", input: "https://truyenfull.vision/the-loai/lich-su/", page: "trang-", script: "gen.js"},
-    {title: "Xuyên Không", input: "https://truyenfull.vision/the-loai/xuyen-khong/", page: "trang-", script: "gen.js"},
-    {title: "Xuyên Nhanh", input: "https://truyenfull.vision/the-loai/xuyen-nhanh/", page: "trang-", script: "gen.js"},
-    {title: "Trọng Sinh", input: "https://truyenfull.vision/the-loai/trong-sinh/", page: "trang-", script: "gen.js"},
-    {title: "Trinh Thám", input: "https://truyenfull.vision/the-loai/trinh-tham/", page: "trang-", script: "gen.js"},
-    {title: "Thám Hiểm", input: "https://truyenfull.vision/the-loai/tham-hiem/", page: "trang-", script: "gen.js"},
-    {title: "Linh Dị", input: "https://truyenfull.vision/the-loai/linh-di/", page: "trang-", script: "gen.js"},
-    {title: "Ngược", input: "https://truyenfull.vision/the-loai/nguoc/", page: "trang-", script: "gen.js"},
-    {title: "Sủng", input: "https://truyenfull.vision/the-loai/sung/", page: "trang-", script: "gen.js"},
-    {title: "Cung Đấu", input: "https://truyenfull.vision/the-loai/cung-dau/", page: "trang-", script: "gen.js"},
-    {title: "Nữ Cường", input: "https://truyenfull.vision/the-loai/nu-cuong/", page: "trang-", script: "gen.js"},
-    {title: "Gia Đấu", input: "https://truyenfull.vision/the-loai/gia-dau/", page: "trang-", script: "gen.js"},
-    {title: "Đông Phương", input: "https://truyenfull.vision/the-loai/dong-phuong/", page: "trang-", script: "gen.js"},
-    {title: "Đam Mỹ", input: "https://truyenfull.vision/the-loai/dam-my/", page: "trang-", script: "gen.js"},
-    {title: "Bách Hợp", input: "https://truyenfull.vision/the-loai/bach-hop/", page: "trang-", script: "gen.js"},
-    {title: "Hài Hước", input: "https://truyenfull.vision/the-loai/hai-huoc/", page: "trang-", script: "gen.js"},
-    {title: "Điền Văn", input: "https://truyenfull.vision/the-loai/dien-van/", page: "trang-", script: "gen.js"},
-    {title: "Cổ Đại", input: "https://truyenfull.vision/the-loai/co-dai/", page: "trang-", script: "gen.js"},
-    {title: "Mạt Thế", input: "https://truyenfull.vision/the-loai/mat-the/", page: "trang-", script: "gen.js"},
-    {title: "Truyện Teen", input: "https://truyenfull.vision/the-loai/truyen-teen/", page: "trang-", script: "gen.js"},
-    {title: "Phương Tây", input: "https://truyenfull.vision/the-loai/phuong-tay/", page: "trang-", script: "gen.js"},
-    {title: "Nữ Phụ", input: "https://truyenfull.vision/the-loai/nu-phu/", page: "trang-", script: "gen.js"},
-    {title: "Light Novel", input: "https://truyenfull.vision/the-loai/light-novel/", page: "trang-", script: "gen.js"},
-    {title: "Việt Nam", input: "https://truyenfull.vision/the-loai/viet-nam/", page: "trang-", script: "gen.js"},
-    {title: "Đoản Văn", input: "https://truyenfull.vision/the-loai/doan-van/", page: "trang-", script: "gen.js"},
-    {title: "Khác", input: "https://truyenfull.vision/the-loai/khac/", page: "trang-", script: "gen.js"}
-];
+(function() {
+    let data = [
+        {title: "Tiên Hiệp", input: "https://truyenfull.vision/the-loai/tien-hiep/", page: "trang-", script: "gen.js"},
+        {title: "Kiếm Hiệp", input: "https://truyenfull.vision/the-loai/kiem-hiep/", page: "trang-", script: "gen.js"},
+        {title: "Ngôn Tình", input: "https://truyenfull.vision/the-loai/ngon-tinh/", page: "trang-", script: "gen.js"},
+        {title: "Đô Thị", input: "https://truyenfull.vision/the-loai/do-thi/", page: "trang-", script: "gen.js"},
+        {title: "Quan Trường", input: "https://truyenfull.vision/the-loai/quan-truong/", page: "trang-", script: "gen.js"},
+        {title: "Võng Du", input: "https://truyenfull.vision/the-loai/vong-du/", page: "trang-", script: "gen.js"},
+        {title: "Khoa Huyễn", input: "https://truyenfull.vision/the-loai/khoa-huyen/", page: "trang-", script: "gen.js"},
+        {title: "Hệ Thống", input: "https://truyenfull.vision/the-loai/he-thong/", page: "trang-", script: "gen.js"},
+        {title: "Huyền Huyễn", input: "https://truyenfull.vision/the-loai/huyen-huyen/", page: "trang-", script: "gen.js"},
+        {title: "Dị Giới", input: "https://truyenfull.vision/the-loai/di-gioi/", page: "trang-", script: "gen.js"},
+        {title: "Dị Năng", input: "https://truyenfull.vision/the-loai/di-nang/", page: "trang-", script: "gen.js"},
+        {title: "Quân Sự", input: "https://truyenfull.vision/the-loai/quan-su/", page: "trang-", script: "gen.js"},
+        {title: "Lịch Sử", input: "https://truyenfull.vision/the-loai/lich-su/", page: "trang-", script: "gen.js"},
+        {title: "Xuyên Không", input: "https://truyenfull.vision/the-loai/xuyen-khong/", page: "trang-", script: "gen.js"},
+        {title: "Xuyên Nhanh", input: "https://truyenfull.vision/the-loai/xuyen-nhanh/", page: "trang-", script: "gen.js"},
+        {title: "Trọng Sinh", input: "https://truyenfull.vision/the-loai/trong-sinh/", page: "trang-", script: "gen.js"},
+        {title: "Trinh Thám", input: "https://truyenfull.vision/the-loai/trinh-tham/", page: "trang-", script: "gen.js"},
+        {title: "Thám Hiểm", input: "https://truyenfull.vision/the-loai/tham-hiem/", page: "trang-", script: "gen.js"},
+        {title: "Linh Dị", input: "https://truyenfull.vision/the-loai/linh-di/", page: "trang-", script: "gen.js"},
+        {title: "Ngược", input: "https://truyenfull.vision/the-loai/nguoc/", page: "trang-", script: "gen.js"},
+        {title: "Sủng", input: "https://truyenfull.vision/the-loai/sung/", page: "trang-", script: "gen.js"},
+        {title: "Cung Đấu", input: "https://truyenfull.vision/the-loai/cung-dau/", page: "trang-", script: "gen.js"},
+        {title: "Nữ Cường", input: "https://truyenfull.vision/the-loai/nu-cuong/", page: "trang-", script: "gen.js"},
+        {title: "Gia Đấu", input: "https://truyenfull.vision/the-loai/gia-dau/", page: "trang-", script: "gen.js"},
+        {title: "Đông Phương", input: "https://truyenfull.vision/the-loai/dong-phuong/", page: "trang-", script: "gen.js"},
+        {title: "Đam Mỹ", input: "https://truyenfull.vision/the-loai/dam-my/", page: "trang-", script: "gen.js"},
+        {title: "Bách Hợp", input: "https://truyenfull.vision/the-loai/bach-hop/", page: "trang-", script: "gen.js"},
+        {title: "Hài Hước", input: "https://truyenfull.vision/the-loai/hai-huoc/", page: "trang-", script: "gen.js"},
+        {title: "Điền Văn", input: "https://truyenfull.vision/the-loai/dien-van/", page: "trang-", script: "gen.js"},
+        {title: "Cổ Đại", input: "https://truyenfull.vision/the-loai/co-dai/", page: "trang-", script: "gen.js"},
+        {title: "Mạt Thế", input: "https://truyenfull.vision/the-loai/mat-the/", page: "trang-", script: "gen.js"},
+        {title: "Truyện Teen", input: "https://truyenfull.vision/the-loai/truyen-teen/", page: "trang-", script: "gen.js"},
+        {title: "Phương Tây", input: "https://truyenfull.vision/the-loai/phuong-tay/", page: "trang-", script: "gen.js"},
+        {title: "Nữ Phụ", input: "https://truyenfull.vision/the-loai/nu-phu/", page: "trang-", script: "gen.js"},
+        {title: "Light Novel", input: "https://truyenfull.vision/the-loai/light-novel/", page: "trang-", script: "gen.js"},
+        {title: "Việt Nam", input: "https://truyenfull.vision/the-loai/viet-nam/", page: "trang-", script: "gen.js"},
+        {title: "Đoản Văn", input: "https://truyenfull.vision/the-loai/doan-van/", page: "trang-", script: "gen.js"},
+        {title: "Khác", input: "https://truyenfull.vision/the-loai/khac/", page: "trang-", script: "gen.js"}
+    ];
 
-Response.success(JSON.stringify(data))
+    // Android: uses Response.success/error (injected by WebView)
+    // iOS: uses return
+    try {
+        Response.success(JSON.stringify(data));
+    } catch(e) {
+        return JSON.stringify({success: true, data: data});
+    }
+})()
