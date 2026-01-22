@@ -1,4 +1,4 @@
-function execute() {
+(function() {
     try {
         let jsonText = document.documentElement.innerText.replace(/[\u0000-\u001F\u007F-\u009F]/g, "");
         let json = JSON.parse(jsonText);
@@ -7,9 +7,13 @@ function execute() {
             .replace(/\t/g, "    ")
             .replace(/\n/g, "<br>");
 
-        Response.success(JSON.stringify({ success: true, data: chapterContent}));
+        // return JSON.stringify({ success: true, data: chapterContent});
+        try {
+            Response.success(JSON.stringify({success: true, data: chapterContent}));
+        } catch(e) {
+            return JSON.stringify({success: true, data: chapterContent});
+        }
     } catch (error) {
-        Response.error(JSON.stringify({ success: false, error: error.message }));
+        return JSON.stringify({ success: false, error: error.message });
     }
-}
-execute();
+})()

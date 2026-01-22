@@ -1,4 +1,4 @@
-function execute() {
+(function() {
     const blackList = [
         "Quang Âm Chi Ngoại",
         "Hùng Biện Cuốn Hút Quá Đơn Giản",
@@ -475,6 +475,7 @@ function execute() {
         "Dạo bước phồn hoa",
         "Nếu thanh xuân không giữ lại được",
         "Liên hoa yêu cốt",
+        /*end*/
         "Một ai của ngày đó",
         "Dù yêu anh có lệch múi giờ",
         "Vụ án không có kẻ sát nhân",
@@ -946,7 +947,7 @@ function execute() {
             // kiểm tra blacklist
             if (nameCmp && !blackSet.has(nameCmp)) {
                 novelList.push({
-                    name: json.data[i].NAME,
+                    name: name,
                     link: json.data[i].ID,
                     description: json.data[i].AUTHOR,
                     cover: json.data[i].THUMB,
@@ -955,9 +956,13 @@ function execute() {
             }
         }
 
-        Response.success(JSON.stringify({ success: true, data: novelList, next: next }));
+        let data = JSON.stringify({ success: true, data: novelList, next: next });
+        try {
+            Response.success(data);
+        } catch(e) {
+            return data;
+        }
     } catch (error) {
-        Response.error(JSON.stringify({ success: false, error: error.message }));
+        return JSON.stringify({ success: false, error: error.message });
     }
-}
-execute();
+})()
